@@ -9,6 +9,7 @@ import (
 	"time"
 
 	"github.com/gomodule/redigo/redis"
+	"github.com/gopy-art/gocelery"
 )
 
 func workerRedis() {

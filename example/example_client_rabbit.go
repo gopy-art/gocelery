@@ -10,6 +10,8 @@ import (
 	"log"
 	"math/rand"
 	"time"
+
+	"github.com/gopy-art/gocelery"
 )
 
 func clientRabbit() {

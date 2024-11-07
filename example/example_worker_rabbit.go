@@ -7,6 +7,8 @@ package example
 
 import (
 	"fmt"
+
+	"github.com/gopy-art/gocelery"
 )
 
 func workerRabbit() {
