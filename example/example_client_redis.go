@@ -1,3 +1,8 @@
+/*
+This is an example of celery controller for redis
+in this example we just send a normal message in redis database with specefic format
+*/
+
 package example
 
 import (

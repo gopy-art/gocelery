@@ -1,3 +1,8 @@
+/*
+This is an example of celery worker for rabbitmq implementation
+in this example we just run 3 worker to listen on 'test' queue for get messages and handle them
+*/
+
 package example
 
 import (

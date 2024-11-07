@@ -1,3 +1,8 @@
+/*
+This is an example of celery controller for rabbitmq
+in this example we just send a normal message in 'test' queue
+*/
+
 package example
 
 import (

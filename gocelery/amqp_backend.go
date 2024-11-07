@@ -1,17 +1,17 @@
-// Copyright (c) 2019 Sick Yoon
-// This file is part of gocelery which is released under MIT license.
-// See file LICENSE for full license details.
+/*
+Gocelery is a task queue implementation for Go modules used to asynchronously execute work outside the HTTP request-response cycle. Celery is an implementation of the task queue concept.
+*/
 
 package gocelery
 
 import (
 	"encoding/json"
 	"fmt"
+	"log"
 	"os"
 	"strconv"
 	"strings"
 	"time"
-	"zsploit/logger"
 
 	// "github.com/streadway/amqp"
 	amqp "github.com/rabbitmq/amqp091-go"
@@ -167,7 +167,7 @@ func SimpleConnectionRabbitMQ(message, username, password, url, queue, task stri
 		conn, err := amqp.Dial(rabbit_url)
 		if err != nil {
 			if rabbitMQConnenctionStatusCeleryErrorMessage {
-				logger.ErrorLogger.Printf("we have an error in connecting the rabbitMQ!\n%v", err)
+				log.Printf("we have an error in connecting the rabbitMQ!\n%v", err)
 				rabbitMQConnenctionStatusCeleryErrorMessage = !rabbitMQConnenctionStatusCeleryErrorMessage
 			}
 		} else {
@@ -178,7 +178,7 @@ func SimpleConnectionRabbitMQ(message, username, password, url, queue, task stri
 			// create channel
 			ch, err := conn.Channel()
 			if err != nil {
-				logger.ErrorLogger.Printf("we have an error in creating the channel!\n%v", err)
+				log.Printf("we have an error in creating the channel!\n%v", err)
 			}
 			defer ch.Close()
 
@@ -192,7 +192,7 @@ func SimpleConnectionRabbitMQ(message, username, password, url, queue, task stri
 				nil,   // arguments
 			)
 			if err != nil {
-				logger.ErrorLogger.Printf("we have an error in creating the queue!\n%v", err)
+				log.Printf("we have an error in creating the queue!\n%v", err)
 			}
 			msgKwargs := make(map[string]interface{})
 			msgKwargs["msg"] = message
@@ -222,7 +222,7 @@ func SimpleConnectionRabbitMQ(message, username, password, url, queue, task stri
 			)
 
 			if errPublish != nil {
-				logger.ErrorLogger.Printf("we have an error in publishing the message in queue!\n%v", errPublish)
+				log.Printf("we have an error in publishing the message in queue!\n%v", errPublish)
 				return errPublish
 			}
 

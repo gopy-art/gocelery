@@ -1,6 +1,6 @@
-// Copyright (c) 2019 Sick Yoon
-// This file is part of gocelery which is released under MIT license.
-// See file LICENSE for full license details.
+/*
+Gocelery is a task queue implementation for Go modules used to asynchronously execute work outside the HTTP request-response cycle. Celery is an implementation of the task queue concept.
+*/
 
 package gocelery
 

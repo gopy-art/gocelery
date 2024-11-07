@@ -1,16 +1,16 @@
-// Copyright (c) 2019 Sick Yoon
-// This file is part of gocelery which is released under MIT license.
-// See file LICENSE for full license details.
+/*
+Gocelery is a task queue implementation for Go modules used to asynchronously execute work outside the HTTP request-response cycle. Celery is an implementation of the task queue concept.
+*/
 
 package gocelery
 
 import (
 	"encoding/json"
 	"fmt"
+	"log"
 	"os"
 	"strconv"
 	"time"
-	"zsploit/logger"
 
 	// "github.com/streadway/amqp"
 	amqp "github.com/rabbitmq/amqp091-go"
@@ -67,14 +67,14 @@ func NewAMQPConnection(host string) (*amqp.Connection, *amqp.Channel) {
 		connection, err := amqp.Dial(host)
 		if err != nil {
 			if rabbitMQConnenctionStatusCeleryErrorMessage {
-				logger.ErrorLogger.Printf("we have an error to connecting to this url : %v!\nThe error is = %v", host, err)
+				log.Printf("we have an error to connecting to this url : %v!\nThe error is = %v", host, err)
 				rabbitMQConnenctionStatusCeleryErrorMessage = !rabbitMQConnenctionStatusCeleryErrorMessage
 			}
 		} else {
 			rabbitMQConnenctionStatusCeleryErrorMessage = !rabbitMQConnenctionStatusCeleryErrorMessage
 			channel, err := connection.Channel()
 			if err != nil {
-				logger.ErrorLogger.Printf("we have an error to connecting to this url : %v!\nThe error is = %v", host, err)
+				log.Printf("we have an error to connecting to this url : %v!\nThe error is = %v", host, err)
 			}
 			_ = rabbitMQConnenctionStatusCeleryErrorMessage
 			

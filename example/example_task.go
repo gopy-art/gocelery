@@ -1,3 +1,8 @@
+/*
+This is an example of celery worker for rabbitmq and redis implementation
+in this example we just declare requirements for celery workers
+*/
+
 package example
 
 import "fmt"

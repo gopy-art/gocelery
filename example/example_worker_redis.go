@@ -1,3 +1,8 @@
+/*
+This is an example of celery worker for redis implementation
+in this example we just run 3 worker to listen on redis database for get messages and handle them
+*/
+
 package example
 
 import (
