@@ -2,6 +2,8 @@
 [![GitHub go.mod Go version of a Go module](https://img.shields.io/badge/wotk_with-rabbitMQ-yellow)](https://go.dev/dl/)
 [![GitHub go.mod Go version of a Go module](https://img.shields.io/badge/work_with-redis-red)](https://go.dev/dl/)
 [![GitHub go.mod Go version of a Go module](https://img.shields.io/badge/unit_test-failing-green)](https://go.dev/dl/)
+[![Go Report Card](https://goreportcard.com/badge/github.com/gopy-art/gocelery)](https://goreportcard.com/report/github.com/gopy-art/gocelery)
+[![Go Reference](https://pkg.go.dev/badge/github.com/rabbitmq/amqp091-go.svg)](https://pkg.go.dev/github.com/gopy-art/gocelery)
 
 # gocelery
 Gocelery is a task queue implementation for Go modules used to asynchronously execute work outside the HTTP request-response cycle. Celery is an implementation of the task queue concept.
