@@ -1,4 +1,4 @@
-[![GitHub go.mod Go version of a Go module](https://img.shields.io/badge/go-1.23.2-blue)](https://go.dev/dl/) 
+[![GitHub go.mod Go version of a Go module](https://img.shields.io/badge/go-1.24.1-blue)](https://go.dev/dl/) 
 [![GitHub go.mod Go version of a Go module](https://img.shields.io/badge/wotk_with-rabbitMQ-yellow)](https://go.dev/dl/)
 [![GitHub go.mod Go version of a Go module](https://img.shields.io/badge/work_with-redis-red)](https://go.dev/dl/)
 [![GitHub go.mod Go version of a Go module](https://img.shields.io/badge/unit_test-failing-green)](https://go.dev/dl/)
