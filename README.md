@@ -1,9 +1,13 @@
-[![GitHub go.mod Go version of a Go module](https://img.shields.io/badge/go-1.24.1-blue)](https://go.dev/dl/) 
+<div align="center">
+
+[![GitHub go.mod Go version of a Go module](https://img.shields.io/badge/go-1.23.2-blue)](https://go.dev/dl/) 
 [![GitHub go.mod Go version of a Go module](https://img.shields.io/badge/wotk_with-rabbitMQ-yellow)](https://go.dev/dl/)
 [![GitHub go.mod Go version of a Go module](https://img.shields.io/badge/work_with-redis-red)](https://go.dev/dl/)
 [![GitHub go.mod Go version of a Go module](https://img.shields.io/badge/unit_test-failing-green)](https://go.dev/dl/)
 [![Go Report Card](https://goreportcard.com/badge/github.com/gopy-art/gocelery)](https://goreportcard.com/report/github.com/gopy-art/gocelery)
 [![Go Reference](https://pkg.go.dev/badge/github.com/rabbitmq/amqp091-go.svg)](https://pkg.go.dev/github.com/gopy-art/gocelery)
+
+</div>
 
 # gocelery
 Gocelery is a task queue implementation for Go modules used to asynchronously execute work outside the HTTP request-response cycle. Celery is an implementation of the task queue concept.
@@ -26,6 +30,10 @@ this package has two side for does its work! <br>
 `worker` : it implements functions which work with broker and backend, and the responsebilty of them are to read from broker and set result to the backend!
 
 <strong>Note</strong> : we have two concept in this package, broker and backend. <strong>broker</strong> is a system that we can share and read our data from that. <strong>backend</strong> is a system that we can set our results from package in that, for example the result of our workers!
+
+<div align="center">
+<img src="./gocelery.png" width="800"> <br><br>
+</div>
 
 ## Distributed Systems you can use
 1. `RabbitMQ` = RabbitMQ is an open source message agent software that implements the Advanced Message Queuing protocol.<br>
