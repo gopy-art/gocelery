@@ -157,7 +157,7 @@ func (b *AMQPCeleryBackend) SetResult(taskID string, result *ResultMessage) erro
 SimpleConnectionRabbitMQ is for publish one message to the specefic queue.
 in this function the message which it will be given from the parameters will be publish into the RABBIT_QUEUE_RESULT which you declare in the .env file.
 */
-func SimpleConnectionRabbitMQ(message, username, password, url, queue, task string) error {
+func SimpleConnectionRabbitMQ(message, username, password, url, queue, task string, tasktime int) error {
 	// read from .env file
 	rabbit_url := fmt.Sprintf("amqp://%s:%s@%s/", username, password, url)
 
@@ -199,7 +199,7 @@ func SimpleConnectionRabbitMQ(message, username, password, url, queue, task stri
 			messageContent := getTaskMessage(task)
 			messageContent.Kwargs = msgKwargs
 			currentTime := time.Now()
-			nextDay := currentTime.AddDate(0, 0, 1)
+			nextDay := currentTime.AddDate(0, 0, tasktime)
 			messageContent.Expires = &nextDay
 
 			resBytes, err := json.Marshal(messageContent)
